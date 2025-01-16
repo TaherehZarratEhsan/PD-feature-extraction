@@ -112,7 +112,7 @@ class ModelTrainer:
             per_cycle_speed_maxima.append(np.max(window_speed))
         
         # Compute the median and max of per-cycle speed maxima
-        median_speed = np.median(np.abs(per_cycle_speed_maxima))
+        median_speed = np.median(per_cycle_speed_maxima)
         max_speed = np.max(per_cycle_speed_maxima)
 
 
@@ -150,12 +150,12 @@ class ModelTrainer:
                 
         self.feat_name= ['ids', 'video_path', 'label',
                         'median_amplitude', 'max_amplitude',
-                        'median_speed', 'max_speed', 'mean_tapping_interval',
+                        'median_speed', 'max_speed', 'median_tapping_interval',
                         'amp_slope','speed_slope',
                         'amp_iqr_to_median', 'speed_iqr_to_median', 'tap_iqr_to_median', 'num_interruptions']     
  
         features = [median_amplitude, max_amplitude,
-                    median_speed, max_speed, mean_tapping_interval, 
+                    median_speed, max_speed, median_tapping_interval, 
                     amp_slope, speed_slope, 
                     amp_iqr_to_median, speed_iqr_to_median,  tap_iqr_to_median,  num_interruptions]
 
